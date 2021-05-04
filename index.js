@@ -41,7 +41,9 @@ app.use('/product', (req,res) => {
 app.use(shopRouters)
 
 //catch-all-middleware ------ 404
-
+app.use('/',function(req, res, next){ 
+    res.status(404).send('<h1>Error 404</h1>')
+})
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => console.log(`Server started at port ${PORT}`))
