@@ -41,7 +41,7 @@ app.use('/product', (req,res) => {
 app.use(shopRouters)
 
 //catch-all-middleware ------ 404
-app.use('/',function(req, res, next){ 
+app.use('/',(req, res, next)=>{ 
     res.status(404).send('<h1>Error 404</h1>')
 })
 
